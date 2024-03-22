@@ -1,0 +1,86 @@
+﻿<Window
+    x:Class="code_project.DataDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:code_project"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="DataDetail"
+    Width="800"
+    Height="500"
+     Loaded="MainForm_Loaded"
+     WindowStartupLocation="CenterScreen"
+     mc:Ignorable="d"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="200" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="600" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+             Grid.Row="0"
+             Grid.Column="1"
+             Grid.ColumnSpan="1"
+             Grid.RowSpan="1">
+            <Label Content="Lensinspection" Height="44" FontWeight="UltraBold" FontSize="22" FontFamily="Cascadia Mono"/>
+        </StackPanel>
+        <DataGrid
+            x:Name="LenInspectionData"
+            CanUserAddRows="False"
+            CanUserReorderColumns="False"
+            CanUserResizeColumns="False"
+            CanUserSortColumns="False"
+            IsReadOnly="True"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Grid.RowSpan="1"
+            IsTextSearchCaseSensitive="True"
+            Foreground="Black" 
+            Background="White" 
+            GridLinesVisibility="None" BorderBrush="#FF050404" >
+            <DataGrid.CellStyle>
+                <Style BasedOn="{StaticResource MaterialDesignDataGridCell}" TargetType="DataGridCell">
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <StackPanel
+         Grid.Row="2"
+         Grid.Column="1"
+         Grid.ColumnSpan="1"
+         Grid.RowSpan="1">
+            <Label Content="ProcessLog" Height="44" FontWeight="UltraBold" FontSize="22" FontFamily="Cascadia Mono"/>
+        </StackPanel>
+        <DataGrid
+            x:Name="ProcessLogData"
+            CanUserAddRows="False"
+            CanUserReorderColumns="False"
+            CanUserResizeColumns="False"
+            CanUserSortColumns="False"
+            IsReadOnly="True"
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Grid.RowSpan="1"
+            IsTextSearchCaseSensitive="True"
+            Foreground="Black" 
+            Background="White" 
+            GridLinesVisibility="None" BorderBrush="#FF050404" />
+    </Grid>
+</Window>
